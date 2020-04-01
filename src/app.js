@@ -5,7 +5,7 @@ const geocode = require("./utils/geocode");
 const forecast = require("./utils/forecast");
 
 const app = express();
-const port = process.env.PORT || 3000; //for heroku and local port
+const port = process.env.PORT || 5000; //for heroku and local port
 
 // Define paths for express config
 const publicDirectoryPath = path.join(__dirname, "../public");
@@ -19,6 +19,11 @@ hbs.registerPartials(partialsPath); // set partials directory
 
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath));
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
 
 // Routing
 app.get("", (req, res) => {
@@ -106,5 +111,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log("Server is up on port" + port);
+  console.log("Server is up on port " + port);
 });
