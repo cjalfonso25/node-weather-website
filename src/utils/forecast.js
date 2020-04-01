@@ -26,13 +26,14 @@ const forecast = (latitude, longitude, callback) => {
       } else {
         callback(
           undefined,
-          body.daily.data[0].summary +
-            " It is currently " +
-            body.currently.temperature +
-            ". Today is " +
-            body.daily.data[0].temperatureHigh +
-            " with a low of " +
-            body.daily.data[0].temperatureLow
+          body
+          // body.daily.data[0].summary +
+          //   " It is currently " +
+          //   body.currently.temperature +
+          //   ". Today is " +
+          //   body.daily.data[0].temperatureHigh +
+          //   " with a low of " +
+          //   body.daily.data[0].temperatureLow
         );
       }
     }
