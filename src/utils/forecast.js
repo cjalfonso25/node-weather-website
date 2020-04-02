@@ -2,7 +2,7 @@ const request = require("request");
 
 const forecast = (latitude, longitude, callback) => {
   const url =
-    "https://api.darksky.net/forecast/14b1d28f26c195596fd3c26fe699fbf7/" +
+    "https://cors-anywhere.herokuapp.com/https://api.mapbox.com/geocoding/v5/mapbox.places/https://api.darksky.net/forecast/14b1d28f26c195596fd3c26fe699fbf7/" +
     latitude +
     "," +
     longitude +
